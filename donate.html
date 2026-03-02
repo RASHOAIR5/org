@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Help Uganda Foundation</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background: #393d39; color: white; padding: 0.8rem 1.5rem; }
+        header .nav-bar { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; }
+        header .logo { width: 180px; height: 56px; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; border-radius: 6px; color: #fff; font-weight: bold; }
+        header .logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        header nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1rem; }
+        header nav a { color: white; text-decoration: none; font-weight: bold; padding: 0.75rem 0.45rem; }
+        header nav a:hover { background: rgba(255,255,255,0.06); border-radius: 4px; }
+        header nav a.active { background: #ff9800; border-radius: 4px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+        .page-title { color: #4CAF50; font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero-donate { background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); color: white; padding: 2rem; border-radius: 8px; margin-bottom: 2rem; text-align: center; }
+        .hero-donate h2 { margin: 0; font-size: 1.8rem; }
+        .hero-donate p { margin: 0.5rem 0 0 0; }
+        .donation-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+        .donation-card { background: #f9f9f9; padding: 2rem; border-radius: 8px; text-align: center; cursor: pointer; border: 2px solid transparent; transition: all 0.3s; }
+        .donation-card:hover { border-color: #ff9800; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .donation-card.selected { border-color: #4CAF50; background: #e8f5e9; }
+        .donation-card h3 { color: #ff9800; margin: 0; font-size: 1.5rem; }
+        .donation-card p { margin: 0.5rem 0 0 0; color: #666; }
+        .donation-form { background: white; padding: 2rem; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 2rem; }
+        .form-section { margin-bottom: 1.5rem; }
+        .form-section h3 { color: #4CAF50; margin-top: 0; }
+        label { display: block; margin-top: 0.5rem; font-weight: bold; color: #333; }
+        input, textarea, select { width: 100%; padding: 0.75rem; margin-top: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; box-sizing: border-box; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .submit-btn { background: #ff9800; color: white; padding: 1rem 2rem; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 1rem; }
+        .submit-btn:hover { background: #e68900; }
+        .payment-methods { display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
+        .payment-method { flex: 1; min-width: 120px; padding: 1rem; border: 2px solid #ddd; border-radius: 4px; text-align: center; cursor: pointer; }
+        .payment-method.selected { border-color: #4CAF50; background: #e8f5e9; }
+        .info-box { background: #e8f5e9; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border-left: 4px solid #4CAF50; }
+        .info-box h3 { color: #4CAF50; margin-top: 0; }
+        footer { background: #333; color: white; text-align: center; padding: 1rem; margin-top: 2rem; }
+        .social-links { display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: center; }
+        .social-links a { display: inline-block; width: 40px; height: 40px; background: #4CAF50; color: white; border-radius: 50%; text-align: center; line-height: 40px; text-decoration: none; font-weight: bold; font-size: 1.2rem; }
+        .social-links a:hover { background: #2e7d32; transform: scale(1.1); }
+        @media (max-width: 768px) {
+            .form-row { grid-template-columns: 1fr; }
+            .donation-options { grid-template-columns: 1fr; }
+            .page-title { font-size: 1.8rem; }
+            .social-links { gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <a href="home.html" class="logo" aria-label="Home"><img src="Screenshot_20260302-143406~2.jpg" alt="Help Uganda logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="reach-us.html">Reach us</a></li>
+                    <li><a href="donate.html" class="active">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">Make a Donation</h1>
+
+        <div class="hero-donate">
+            <h2>Your generosity saves lives</h2>
+            <p>Every dollar donated goes directly to supporting vulnerable families and communities across Uganda.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>💡 How Your Donation Helps</h3>
+            <ul style="margin: 0;">
+                <li><strong>$10:</strong> Provides a nutritious meal for a child for a week</li>
+                <li><strong>$25:</strong> Supplies medical check-ups for 5 people</li>
+                <li><strong>$50:</strong> Pays for school supplies for one student</li>
+                <li><strong>$100:</strong> Provides clean water access for a family for 3 months</li>
+                <li><strong>$500+:</strong> Supports a complete community project</li>
+            </ul>
+        </div>
+
+        <h2 style="color: #4CAF50; margin-top: 2rem;">Quick Donation Amounts (USD)</h2>
+        <div class="donation-options" id="usd-options">
+            <div class="donation-card" onclick="selectAmount(10,'USD')">
+                <h3>$10</h3>
+                <p>One Week of Meals</p>
+            </div>
+            <div class="donation-card" onclick="selectAmount(25,'USD')">
+                <h3>$25</h3>
+                <p>Medical Care</p>
+            </div>
+            <div class="donation-card" onclick="selectAmount(50,'USD')">
+                <h3>$50</h3>
+                <p>Education Support</p>
+            </div>
+            <div class="donation-card" onclick="selectAmount(100,'USD')">
+                <h3>$100</h3>
+                <p>Clean Water</p>
+            </div>
+            <div class="donation-card" onclick="selectAmount(250,'USD')">
+                <h3>$250</h3>
+                <p>Major Impact</p>
+            </div>
+            <div class="donation-card" onclick="selectAmount(500,'USD')">
+                <h3>$500+</h3>
+                <p>Community Project</p>
+            </div>
+        </div>
+        <h2 style="color: #4CAF50; margin-top: 2rem;">Quick Donation Amounts (EUR)</h2>
+        <div class="donation-options" id="eur-options">
+            <div class="donation-card" onclick="selectAmount(20,'EUR')">
+                <h3>€20</h3>
+                <p>Basic Euro Gift</p>
+            </div>
+            <div class="donation-card" onclick="selectAmount(50,'EUR')">
+                <h3>€50</h3>
+                <p>Small Project</p>
+            </div>
+            <div class="donation-card" onclick="selectAmount(100,'EUR')">
+                <h3>€100</h3>
+                <p>Community Aid</p>
+            </div>
+        </div>
+
+        <div class="donation-form">
+            <form action="https://example.com/donate" method="post" id="donationForm">
+                <div class="form-section">
+                    <h3>Donation Amount</h3>
+                    <label for="amount">Amount *</label>
+                    <input type="number" id="amount" name="amount" min="1" step="0.01" required placeholder="Enter custom amount">
+                    <input type="hidden" id="currency" name="currency" value="USD">
+                </div>
+
+                <div class="form-section">
+                    <h3>Donation Type</h3>
+                    <div style="margin-top: 1rem;">
+                        <label style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                            <input type="radio" name="donationType" value="one-time" checked style="width: auto; margin-right: 0.5rem;">
+                            One-Time Donation
+                        </label>
+                        <label style="display: flex; align-items: center;">
+                            <input type="radio" name="donationType" value="monthly" style="width: auto; margin-right: 0.5rem;">
+                            Monthly Recurring Donation
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Payment Method</h3>
+                    <div class="payment-methods">
+                        <div class="payment-method selected" onclick="selectPayment(this)">💳 Credit/Debit Card</div>
+                        <div class="payment-method" onclick="selectPayment(this)">🏦 Bank Transfer</div>
+                        <div class="payment-method" onclick="selectPayment(this)">📱 Mobile Money</div>
+                        <div class="payment-method" onclick="selectPayment(this)">💰 PayPal</div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Donor Information</h3>
+                    <div class="form-row">
+                        <div>
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div>
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                    <label for="country">Country *</label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+
+                <div class="form-section">
+                    <h3>Additional Information</h3>
+                    <label for="focus">Which area would you like to support? (Optional)</label>
+                    <select id="focus" name="focus">
+                        <option value="">-- Choose an area --</option>
+                        <option value="food">Food & Water Programs</option>
+                        <option value="healthcare">Healthcare Initiatives</option>
+                        <option value="education">Education Support</option>
+                        <option value="general">General (Highest Need)</option>
+                    </select>
+                    <label for="message">Special Message or Dedication (Optional)</label>
+                    <textarea id="message" name="message" placeholder="Share why you're helping or dedicate your gift..."></textarea>
+                    <label style="display: flex; align-items: center; margin-top: 1rem;">
+                        <input type="checkbox" id="newsletter" name="newsletter" style="width: auto; margin-right: 0.5rem;">
+                        Yes, I'd like to receive updates about our work
+                    </label>
+                    <label style="display: flex; align-items: center; margin-top: 0.5rem;">
+                        <input type="checkbox" id="anonymous" name="anonymous" style="width: auto; margin-right: 0.5rem;">
+                        Make this donation anonymous
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn">Complete Donation</button>
+            </form>
+        </div>
+
+        <div class="info-box">
+            <h3>❓ Frequently Asked Questions</h3>
+            <p><strong>Is my donation secure?</strong> Yes, all transactions are encrypted and processed through secure payment gateways.</p>
+            <p><strong>Can I get a tax receipt?</strong> Yes, we'll send you a tax-deductible receipt for all donations.</p>
+            <p><strong>How is my money used?</strong> We ensure 85%+ of donations directly support programs, with minimal overhead.</p>
+            <p><strong>Can I change my recurring donation?</strong> Yes, you can modify or cancel anytime by contacting us.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Help Uganda Foundation. All rights reserved. | Making a difference in communities across Uganda</p>
+        <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/61558434766095/posts/122109403502281158/?app=fbl" title="Facebook">f</a>
+                    <a href="https://x.com/rashoairlaw" title="Twitter">𝕏</a>
+                    <a href="https://www.instagram.com/rashoair5?igsh=bmsyanRxenpxZjJ0" title="Instagram">📷</a>
+                </div>
+            </div>
+    </footer>
+
+    <script>
+        function selectAmount(amount, currency) {
+            document.getElementById('amount').value = amount;
+            document.getElementById('currency').value = currency;
+            document.querySelectorAll('.donation-card').forEach(card => card.classList.remove('selected'));
+            event.target.closest('.donation-card').classList.add('selected');
+        }
+
+        function selectPayment(element) {
+            document.querySelectorAll('.payment-method').forEach(method => method.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+    </script>
+</body>
+</html>
